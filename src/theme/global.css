@@ -1,0 +1,52 @@
+body {
+  color: var(--ion-text-color, #202124);
+}
+
+ion-avatar {
+  background: #e2e8f0;
+}
+
+.PhoneInput .PhoneInputCountrySelect {
+  display: none !important;
+}
+
+.PhoneInput {
+  width: 100%;
+}
+
+.PhoneInputCountryIconUnicode,
+.PhoneInputCountryIcon {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+}
+
+.PhoneInput input {
+  padding-left: 25px !important;
+  padding-bottom: 0 !important;
+}
+
+.PhoneInput svg {
+  height: 1rem;
+}
+
+ion-card {
+  cursor: pointer;
+}
+
+ion-card ion-button {
+  margin: 0 !important;
+}
+
+[data-hidden="true"] {
+  display: none;
+}
+
+/* React Datepicker */
+.react-datepicker__navigation-icon {
+  margin-top: 12px !important;
+}
+
+.react-datepicker__triangle {
+  margin-left: -50% !important;
+}

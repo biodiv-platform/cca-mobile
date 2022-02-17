@@ -1,0 +1,20 @@
+{
+  "appId": "org.communityconservedareas.m",
+  "appName": "Community Conserved Areas",
+  "webDir": "build",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    },
+    "GoogleAuth": {
+      "scopes": [
+        "profile",
+        "email"
+      ],
+      "serverClientId": "x.apps.googleusercontent.com",
+      "forceCodeForRefreshToken": true
+    }
+  }
+}

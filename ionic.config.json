@@ -1,0 +1,7 @@
+{
+  "name": "Community Conserved Areas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

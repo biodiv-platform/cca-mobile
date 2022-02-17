@@ -1,0 +1,99 @@
+{
+  "about": {
+    "title": "About"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "sign_in_google": "Sign in with Google",
+    "signup": "Register"
+  },
+  "cca": {
+    "list": {
+      "title": "Browse Map"
+    },
+    "pending": {
+      "failed": "Unable to sync at the moment",
+      "sync_now": "Synchronize Now",
+      "synced": "All Synced",
+      "syncing": "Synchronizing...",
+      "title": "Pending"
+    }
+  },
+  "common": {
+    "add": "Add",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "close": "Close",
+    "confirm": "Are you sure?",
+    "confirm_delete": "Are you sure want to delete?",
+    "created": "Created",
+    "delete": "Delete",
+    "done": "Done",
+    "edit": "Edit",
+    "know_more": "Know More",
+    "next": "Next",
+    "offline": "You are offline",
+    "or": "or",
+    "prev": "Previous",
+    "save": "Save",
+    "toggle": "Toggle",
+    "updated": "Updated",
+    "view": "View"
+  },
+  "form": {
+    "attribution": "Attribution",
+    "email": "Email",
+    "find_gmaps": "Search from Google Maps",
+    "geometry": "Geometry",
+    "geometry_hint": "Enter Latitude,Longitude in decimal degrees",
+    "license": "License",
+    "login": "Login",
+    "mobile": "Mobile",
+    "password": "Password",
+    "phone": "Phone",
+    "saved": {
+      "error": {
+        "description": "We were unable to upload your participation at the moment, but don't worry it's saved offline and you can try again later from your profile page.",
+        "title": "Error while uploading"
+      },
+      "success": {
+        "description": "Participation was saved successfully, if you wish to view the participation please click on view particiapation button below",
+        "title": "Saved Successfully"
+      }
+    },
+    "submit": "Submit",
+    "trace": {
+      "accuracy": "Location Accuracy",
+      "current": "Current Location",
+      "polygon_required": "3 or more points are required to create a polygon",
+      "start": "Start Trace",
+      "stop": "Stop Trace"
+    }
+  },
+  "home": {
+    "mission": "Our mission is to enhance the understanding of and strengthen the narrative about the role played by Community Conserved Areas in conservation of biological diversity in larger landscapes in South Asia.",
+    "title": "Home",
+    "welcome": "Welcome to the CCA Portal"
+  },
+  "participate": {
+    "title": "Participate"
+  },
+  "settings": {
+    "language": "Change Language",
+    "title": "Settings"
+  },
+  "templates": {
+    "title": "Templates"
+  },
+  "unknown": "Unknown",
+  "user": {
+    "profile": {
+      "edit": "Accout Settings",
+      "pending": "Pending",
+      "title": "Profile",
+      "uploaded": "Uploaded",
+      "view_full": "View Full Profile"
+    }
+  }
+}
