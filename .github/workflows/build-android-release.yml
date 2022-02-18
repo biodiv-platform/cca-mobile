@@ -41,8 +41,11 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
 
-      - name: Update APK Version Number
-        run: sed -i 's|versionName "1.0"|versionName "${{ steps.get_version.outputs.VERSION }}"|g' android/app/build.gradle && sed -i 's|versionName "v|versionName "|g' android/app/build.gradle
+      - name: Update versionName
+        run: newVersionName=$(echo "${{ steps.get_version.outputs.VERSION }}" | sed 's/v//g') && sed -i "s|versionName \"1.0\"|versionName \"$newVersionName\"|g" android/app/build.gradle
+
+      - name: Update versionCode
+        run: newVersionCode=$(echo "${{ steps.get_version.outputs.VERSION }}" | sed 's/\.//g' | sed 's/v//g') && sed -i "s|versionCode 1|versionCode $newVersionCode|g" android/app/build.gradle
 
       - name: Prepare Gradle
         run: cd android && chmod +x ./gradlew && cd ..
