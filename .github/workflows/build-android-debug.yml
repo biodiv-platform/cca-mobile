@@ -26,6 +26,9 @@ jobs:
         env:
           SITE_CONFIG: ${{ secrets.SITE_CONFIG }}
 
+      - name: Update Endpoint to Staging
+        run: sed -i 's|https://community|https://staging.community|g' src/configs/site-config.js
+
       - name: Build UI
         run: npm install -g @ionic/cli yarn && yarn install && yarn build
 
