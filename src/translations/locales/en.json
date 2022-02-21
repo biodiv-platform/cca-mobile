@@ -42,6 +42,7 @@
     "view": "View"
   },
   "form": {
+    "back_message": "Are you sure?\nYour Data will be discarded!",
     "attribution": "Attribution",
     "email": "Email",
     "find_gmaps": "Search from Google Maps",

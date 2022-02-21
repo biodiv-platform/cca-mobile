@@ -23,6 +23,12 @@ export function FormNavigation({
     setTabIndex(tabIndex + i);
   };
 
+  const onBackClicked = () => {
+    if (confirm(t("form.back_message"))) {
+      navigate(-1);
+    }
+  };
+
   return (
     <Box p={4}>
       <SimpleGrid columns={2} spacing={4} mb={4}>
@@ -30,7 +36,7 @@ export function FormNavigation({
           colorScheme="blue"
           isFullWidth={true}
           isDisabled={tabIndex === 0}
-          onClick={() => navigate(-1)}
+          onClick={onBackClicked}
           leftIcon={<ArrowBackIcon />}
           size="sm"
         >
