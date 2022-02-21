@@ -40,9 +40,9 @@ export default function FieldEditor({ field, onClose }) {
     const r = await trySingleDataSync(payload);
 
     if (r.success) {
-      notification(t("form.saved.success"), NotificationType.Success);
+      notification(t("form.saved.success.title"), NotificationType.Success);
     } else {
-      notification(t("form.saved.error"));
+      notification(t("form.saved.error.title"));
     }
 
     setData(r.data);

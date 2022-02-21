@@ -12,6 +12,7 @@ interface ISubmitButtonProps {
   w?;
   mt?;
   isFullWidth?;
+  isLoading?;
 }
 
 export const SubmitButton = ({

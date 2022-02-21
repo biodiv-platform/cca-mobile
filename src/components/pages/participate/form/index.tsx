@@ -73,7 +73,11 @@ export default function ParticipateFormComponent({ template }) {
             setTabIndex={setTabIndex}
             totalSize={templateGroups.length}
           >
-            <SubmitButton leftIcon={<CheckIcon />} isFullWidth={true}>
+            <SubmitButton
+              isLoading={hForm.formState.isSubmitting}
+              leftIcon={<CheckIcon />}
+              isFullWidth={true}
+            >
               {t("form.submit")}
             </SubmitButton>
           </FormNavigation>
