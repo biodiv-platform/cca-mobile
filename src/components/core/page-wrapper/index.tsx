@@ -1,14 +1,18 @@
 import {
-  IonBackButton,
+  IonButton,
   IonButtons,
   IonContent,
   IonHeader,
+  IonIcon,
   IonMenuButton,
   IonPage,
   IonTitle,
-  IonToolbar
+  IonToolbar,
+  useIonRouter
 } from "@ionic/react";
+import { arrowBack } from "ionicons/icons";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface PageWrapperProps {
   title;
@@ -17,12 +21,27 @@ interface PageWrapperProps {
 }
 
 export default function PageWrapper({ title, children, showBackButton }: PageWrapperProps) {
+  const { goBack } = useIonRouter();
+  const { t } = useTranslation();
+
+  const confirmBack = () => {
+    if (confirm(t("form.back_message"))) {
+      goBack();
+    }
+  };
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            {showBackButton ? <IonBackButton defaultHref="/" /> : <IonMenuButton />}
+            {showBackButton ? (
+              <IonButton shape="round" onClick={confirmBack}>
+                <IonIcon icon={arrowBack} />
+              </IonButton>
+            ) : (
+              <IonMenuButton />
+            )}
           </IonButtons>
           <IonTitle>{title}</IonTitle>
         </IonToolbar>
