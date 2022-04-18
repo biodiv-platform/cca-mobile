@@ -73,7 +73,7 @@ export const RadioInputField = ({
       {isOthers && <OthersInput name={name} value={field.value} />}
 
       {isClearable && (
-        <Button onClick={handleOnReset} size="xs">
+        <Button onClick={handleOnReset} ml={4} size="xs">
           {t("common.clear")}
         </Button>
       )}

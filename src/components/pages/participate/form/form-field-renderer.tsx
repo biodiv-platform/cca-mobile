@@ -50,13 +50,20 @@ export function ParticipateFormFieldRenderer({ field }) {
         <RadioInputField
           {...defaultProps}
           options={field.valueOptions}
+          isClearable={true}
           isInline={false}
           isOthers={true}
         />
       );
 
     case FORM_TYPE.MULTI_SELECT_DROPDOWN:
-      return <SelectMultipleInputField {...defaultProps} options={field.valueOptions} />;
+      return (
+        <SelectMultipleInputField
+          {...defaultProps}
+          isClearable={true}
+          options={field.valueOptions}
+        />
+      );
 
     case FORM_TYPE.MULTI_SELECT_CHECKBOX:
       return <CheckboxListField {...defaultProps} options={field.valueOptions} isOthers={true} />;
