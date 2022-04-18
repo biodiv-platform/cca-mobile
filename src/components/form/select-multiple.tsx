@@ -22,6 +22,7 @@ interface SelectMultipleProps {
   isRequired?: boolean;
   isSearchable?: boolean;
   isLargeVariant?;
+  isClearable?;
   isOthers?;
 }
 
@@ -41,6 +42,7 @@ export const SelectMultipleInputField = ({
   selectRef,
   isRequired,
   isSearchable,
+  isClearable,
   isLargeVariant,
   isOthers,
   ...props
@@ -77,6 +79,7 @@ export const SelectMultipleInputField = ({
           defaultValue={initialValue}
           isSearchable={true}
           isMulti={true}
+          isClearable={isClearable}
           isDisabled={disabled}
           styles={selectStyles}
           ref={selectRef}

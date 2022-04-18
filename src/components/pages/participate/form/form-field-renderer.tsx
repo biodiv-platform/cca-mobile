@@ -42,10 +42,10 @@ export function ParticipateFormFieldRenderer({ field }) {
     case FORM_TYPE.HEADING:
       return <h1>{defaultProps.title}</h1>;
 
-    case FORM_TYPE.SINGLE_SELECT:
+    case FORM_TYPE.SINGLE_SELECT_DROPDOWN:
       return <SelectInputField {...defaultProps} options={field.valueOptions} />;
 
-    case FORM_TYPE.RADIO:
+    case FORM_TYPE.SINGLE_SELECT_RADIO:
       return (
         <RadioInputField
           {...defaultProps}
@@ -55,10 +55,10 @@ export function ParticipateFormFieldRenderer({ field }) {
         />
       );
 
-    case FORM_TYPE.MULTI_SELECT:
+    case FORM_TYPE.MULTI_SELECT_DROPDOWN:
       return <SelectMultipleInputField {...defaultProps} options={field.valueOptions} />;
 
-    case FORM_TYPE.CHECKBOX:
+    case FORM_TYPE.MULTI_SELECT_CHECKBOX:
       return <CheckboxListField {...defaultProps} options={field.valueOptions} isOthers={true} />;
 
     case FORM_TYPE.NUMBER:

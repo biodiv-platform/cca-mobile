@@ -26,9 +26,8 @@ const RenderOption = ({ value }) => <div>{optionLabelShow(value?.label)}</div>;
 
 const RenderOptionMulti = ({ value }) => (
   <UnorderedList pl={1}>
-    {value?.map((o, index) => (
-      <ListItem key={index}>{optionLabelShow(o?.label)}</ListItem>
-    ))}
+    {Array.isArray(value) &&
+      value?.map((o, index) => <ListItem key={index}>{optionLabelShow(o?.label)}</ListItem>)}
   </UnorderedList>
 );
 
@@ -108,12 +107,12 @@ export default function FieldShow({ field, response }) {
     case FORM_TYPE.TEXT_AREA:
       return <RenderText value={value} />;
 
-    case FORM_TYPE.SINGLE_SELECT:
-    case FORM_TYPE.RADIO:
+    case FORM_TYPE.SINGLE_SELECT_DROPDOWN:
+    case FORM_TYPE.SINGLE_SELECT_RADIO:
       return <RenderOption value={value} />;
 
-    case FORM_TYPE.MULTI_SELECT:
-    case FORM_TYPE.CHECKBOX:
+    case FORM_TYPE.MULTI_SELECT_DROPDOWN:
+    case FORM_TYPE.MULTI_SELECT_CHECKBOX:
       return <RenderOptionMulti value={value} />;
 
     case FORM_TYPE.NUMBER_RANGE:

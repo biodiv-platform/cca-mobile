@@ -1,4 +1,5 @@
 import {
+  Button,
   FormControl,
   FormErrorMessage,
   FormHelperText,
@@ -9,6 +10,7 @@ import {
 import { namedFormErrorMessage, optionLabelShow } from "@utils/field";
 import React from "react";
 import { useController } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import { FormInputControl, FormLabel, OthersInput } from "./common";
 
@@ -24,6 +26,7 @@ interface IRadioProps {
   isInline?: boolean;
   isLargeVariant?;
   isOthers?;
+  isClearable?;
 }
 
 export const RadioInputField = ({
@@ -38,9 +41,13 @@ export const RadioInputField = ({
   options = [],
   isLargeVariant,
   isOthers,
+  isClearable,
   ...props
 }: IRadioProps) => {
   const { field, fieldState } = useController({ name });
+  const { t } = useTranslation();
+
+  const handleOnReset = () => field.onChange("");
 
   return (
     <FormControl isInvalid={fieldState.invalid} mb={mb} {...props}>
@@ -52,7 +59,7 @@ export const RadioInputField = ({
         helpText={helpText}
       />
       <FormInputControl isLargeVariant={isLargeVariant}>
-        <RadioGroup key={name} {...field}>
+        <RadioGroup id={name} {...field}>
           <Stack direction={isInline ? "row" : "column"} py={2}>
             {options.map((o) => (
               <Radio key={o.value} value={o.value}>
@@ -64,6 +71,12 @@ export const RadioInputField = ({
       </FormInputControl>
 
       {isOthers && <OthersInput name={name} value={field.value} />}
+
+      {isClearable && (
+        <Button onClick={handleOnReset} size="xs">
+          {t("common.clear")}
+        </Button>
+      )}
 
       <FormErrorMessage children={namedFormErrorMessage(fieldState?.error?.message, name, title)} />
       {hint && <FormHelperText color="gray.600">{hint}</FormHelperText>}
