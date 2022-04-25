@@ -74,6 +74,7 @@ export const GeometryField = ({
             isAutocomplete={true}
             isMultiple={true}
             isImport={true}
+            maxZoom={16}
             onFeaturesChange={field.onChange}
             gmapRegion={SITE_CONFIG.MAP.COUNTRY}
             gmapApiAccessToken={SITE_CONFIG.TOKENS.GMAP}
