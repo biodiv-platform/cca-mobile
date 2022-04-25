@@ -12,7 +12,7 @@ export default function CurrentLocation({ onViewPortChange }) {
       onViewPortChange({
         latitude: loc.coords.latitude,
         longitude: loc.coords.longitude,
-        zoom: 16
+        zoom: 14
       });
     } catch (e) {
       console.error(e);

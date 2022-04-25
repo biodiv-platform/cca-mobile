@@ -59,13 +59,17 @@ export default function NativeLocation({ onChange, onViewPortChange }: NativeLoc
   return (
     <ErrorBoundary fallback={null}>
       <ButtonGroup mb={4}>
-        <Button colorScheme={position.length ? "red" : "blue"} onClick={handleOnWatchToggle}>
+        <Button
+          hidden={true}
+          colorScheme={position.length ? "red" : "blue"}
+          onClick={handleOnWatchToggle}
+        >
           {position.length ? t("form.trace.stop") : t("form.trace.start")}
         </Button>
         <CurrentLocation onViewPortChange={onViewPortChange} />
       </ButtonGroup>
 
-      <Box mb={4}>
+      <Box mb={4} hidden={true}>
         {accuracy && `${t("form.trace.accuracy")}: ± ${Number(accuracy).toFixed(0)} m`}
       </Box>
     </ErrorBoundary>

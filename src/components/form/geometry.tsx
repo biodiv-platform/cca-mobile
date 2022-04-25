@@ -104,7 +104,7 @@ export const GeometryField = ({
             importButtonComponent={
               <Button type="button" placeholder={t("common.add")} children="Import" />
             }
-            showTrace={false}
+            showTrace={true}
             ref={mapRef}
             traceButtonComponent={
               <NativeLocation
