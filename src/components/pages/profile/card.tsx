@@ -57,7 +57,7 @@ export default function UserContributionCard({
           {data.shortName}
         </Box>
       </Flex>
-      <Box fontWeight="bold" fontSize="xl" mb={3} isTruncated>
+      <Box fontWeight="bold" fontSize="xl" mb={3} noOfLines={1}>
         {title}
       </Box>
       <Box mb={3} hidden={isPending}>

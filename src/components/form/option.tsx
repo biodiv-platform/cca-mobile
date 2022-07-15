@@ -51,7 +51,7 @@ export const OptionsField = ({
 
   return (
     <FormControl
-      isInvalid={formState?.errors?.[name]?.message}
+      isInvalid={!!formState?.errors?.[name]}
       mb={mb}
       hidden={hidden}
       isRequired={isRequired}
@@ -71,18 +71,18 @@ export const OptionsField = ({
             <GridItem colSpan={3}>
               <Input
                 {...register(`${name}.${index}.label`)}
-                placeholder={t("form:options.label")}
+                placeholder={t("form.options.label")}
                 bg="white"
               />
-              <FormErrorMessage children={formState.errors[`${name}.${index}.label`]} />
+              <FormErrorMessage children={formState.errors[`${name}.${index}.label`]?.toString()} />
             </GridItem>
             <GridItem colSpan={3}>
               <Input
                 {...register(`${name}.${index}.value`)}
-                placeholder={t("form:options.value")}
+                placeholder={t("form.options.value")}
                 bg="white"
               />
-              <FormErrorMessage children={formState.errors[`${name}.${index}.value`]} />
+              <FormErrorMessage children={formState.errors[`${name}.${index}.value`]?.toString()} />
             </GridItem>
             <Button
               colorScheme="red"
@@ -90,15 +90,15 @@ export const OptionsField = ({
               onClick={() => remove(index)}
               leftIcon={<DeleteIcon />}
             >
-              {t("common:delete")}
+              {t("common.delete")}
             </Button>
           </SimpleGrid>
         ))}
         <Button colorScheme="green" leftIcon={<AddIcon />} type="button" onClick={add}>
-          {t("common:add")}
+          {t("common.add")}
         </Button>
       </div>
-      <FormErrorMessage children={formState?.errors?.[name]?.message} />
+      <FormErrorMessage children={formState?.errors?.[name]?.message?.toString()} />
       {hint && <FormHelperText color="gray.600">{hint}</FormHelperText>}
     </FormControl>
   );

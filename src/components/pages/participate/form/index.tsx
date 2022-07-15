@@ -76,7 +76,7 @@ export default function ParticipateFormComponent({ template }) {
             <SubmitButton
               isLoading={hForm.formState.isSubmitting}
               leftIcon={<CheckIcon />}
-              isFullWidth={true}
+              width="full"
             >
               {t("form.submit")}
             </SubmitButton>

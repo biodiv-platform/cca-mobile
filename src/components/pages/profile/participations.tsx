@@ -76,7 +76,7 @@ export default function UserParticipations() {
           <Avatar size="lg" name={user?.name} />
           <Box overflow="hidden">
             <Heading fontSize="xl">{user?.name}</Heading>
-            <Box pt={1} isTruncated>
+            <Box pt={1} noOfLines={1}>
               {user?.email}
             </Box>
           </Box>

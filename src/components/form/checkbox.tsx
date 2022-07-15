@@ -24,7 +24,7 @@ export const CheckboxField = ({ name, label, mb = 4, hint, disabled, ...props }:
         onChange={(e) => onChange(e.target["checked"])}
         placeholder={label}
         onBlur={onBlur}
-        defaultIsChecked={value}
+        defaultChecked={value}
         isDisabled={disabled}
       >
         {label}

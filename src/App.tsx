@@ -39,9 +39,11 @@ import IndexedDBProvider from "use-indexeddb";
 
 setupIonicReact({ mode: "md" });
 
+const IonReactRouterI: any = IonReactRouter;
+
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
+    <IonReactRouterI>
       <IndexedDBProvider config={IDB_CONFIG} loading="loading...">
         <BusProvider>
           <GlobalStateProvider>
@@ -95,7 +97,7 @@ const App: React.FC = () => (
           </GlobalStateProvider>
         </BusProvider>
       </IndexedDBProvider>
-    </IonReactRouter>
+    </IonReactRouterI>
   </IonApp>
 );
 

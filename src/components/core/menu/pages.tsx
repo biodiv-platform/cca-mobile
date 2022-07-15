@@ -1,4 +1,4 @@
-import { add, albums, exit, list, home, settings } from "ionicons/icons";
+import { add, exit, list, home, settings } from "ionicons/icons";
 
 interface AppPage {
   url: string;

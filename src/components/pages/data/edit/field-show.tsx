@@ -8,7 +8,7 @@ import {
   UnorderedList
 } from "@chakra-ui/react";
 import SITE_CONFIG from "@configs/site-config";
-import { defaultViewPort } from "@ibp/naksha-commons";
+import { defaultViewState } from "@ibp/naksha-commons";
 import { NakshaGmapsView } from "@ibp/naksha-gmaps-view";
 import { FORM_TYPE } from "@static/constants";
 import { formatDate, formatDateRange, formatYear } from "@utils/date";
@@ -75,10 +75,10 @@ const RenderGeometry = ({ value }) => (
   <Box pt={2}>
     <ErrorBoundary fallback={<div>GeoJson Invalid/Unavailable!</div>}>
       <NakshaGmapsView
-        defaultViewPort={defaultViewPort}
+        defaultViewState={defaultViewState}
         features={value}
         gmapRegion={SITE_CONFIG.MAP.COUNTRY}
-        gmapApiAccessToken={SITE_CONFIG.TOKENS.GMAP}
+        gmapAccessToken={SITE_CONFIG.TOKENS.GMAP}
         maxZoom={14}
         mapStyle={{
           height: "30rem",

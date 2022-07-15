@@ -11,7 +11,7 @@ interface ISubmitButtonProps {
   mb?;
   w?;
   mt?;
-  isFullWidth?;
+  width?;
   isLoading?;
 }
 

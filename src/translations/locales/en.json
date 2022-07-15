@@ -42,8 +42,8 @@
     "view": "View"
   },
   "form": {
-    "back_message": "Are you sure?\nYour Data will be discarded!",
     "attribution": "Attribution",
+    "back_message": "Are you sure?\nYour Data will be discarded!",
     "email": "Email",
     "find_gmaps": "Search from Google Maps",
     "geometry": "Geometry",
@@ -51,6 +51,10 @@
     "license": "License",
     "login": "Login",
     "mobile": "Mobile",
+    "options": {
+      "label": "Label",
+      "value": "Value"
+    },
     "password": "Password",
     "phone": "Phone",
     "saved": {

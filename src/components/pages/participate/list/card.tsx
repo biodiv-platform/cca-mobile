@@ -32,10 +32,10 @@ export default function ContributeFormCard({ form }) {
           {form.shortName}
         </Box>
       </Flex>
-      <Box fontWeight="bold" as="h4" lineHeight="tight" isTruncated>
+      <Box fontWeight="bold" as="h4" lineHeight="tight" noOfLines={1}>
         {form.name}
       </Box>
-      <Box mb={4} isTruncated>
+      <Box mb={4} noOfLines={1}>
         {form.description}
       </Box>
       <Button

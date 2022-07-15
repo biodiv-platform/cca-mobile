@@ -123,7 +123,9 @@ export const FileField = ({
   };
 
   const { getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject } = useDropzone({
-    accept: "image/*",
+    accept: {
+      "image/*": [".jpg", ".jpeg", ".png"]
+    },
     multiple: true,
     onDrop
   });

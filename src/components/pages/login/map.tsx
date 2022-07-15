@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import SITE_CONFIG from "@configs/site-config";
-import { NakshaGmapsDraw } from "@ibp/naksha-gmaps-draw";
+import { NakshaGmapsDraw, GMAP_FEATURE_TYPES } from "@ibp/naksha-gmaps-draw";
 import { getMapCenter } from "@utils/location";
 import React from "react";
 
@@ -16,12 +16,13 @@ export default function DummyMap() {
   return (
     <Box hidden={true}>
       <NakshaGmapsDraw
-        defaultViewPort={defaultViewPort}
+        defaultViewState={defaultViewPort}
+        defaultDrawingMode={GMAP_FEATURE_TYPES.POINT}
         isAutocomplete={true}
         isMultiple={true}
         isImport={true}
         gmapRegion={SITE_CONFIG.MAP.COUNTRY}
-        gmapApiAccessToken={SITE_CONFIG.TOKENS.GMAP}
+        gmapAccessToken={SITE_CONFIG.TOKENS.GMAP}
       />
     </Box>
   );

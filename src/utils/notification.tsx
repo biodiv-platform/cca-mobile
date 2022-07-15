@@ -12,7 +12,7 @@ const notification = (message, type = NotificationType.Error) => {
   if (!message) {
     return;
   }
-  const toast = createStandaloneToast({ theme: customTheme });
+  const { toast } = createStandaloneToast({ theme: customTheme });
 
   toast({
     description: message,

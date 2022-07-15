@@ -8,8 +8,7 @@ import {
   IconButton,
   Input,
   useDisclosure,
-  useFormControlContext,
-  useStyles
+  useFormControlContext
 } from "@chakra-ui/react";
 import { isOthersField } from "@utils/field";
 import React, { useMemo } from "react";
@@ -17,9 +16,8 @@ import { useController } from "react-hook-form";
 
 const RequiredIndicator = () => {
   const { isRequired } = useFormControlContext();
-  const styles = useStyles();
 
-  return isRequired ? <chakra.span __css={styles.requiredIndicator} children="*" /> : null;
+  return isRequired ? <chakra.span __css={{ color: "red.500" }} ml={1} children="*" /> : null;
 };
 
 export function FormLabel({ title, label, name, helpText, isLargeVariant }) {

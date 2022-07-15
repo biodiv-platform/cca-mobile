@@ -28,7 +28,7 @@ export function FormNavigation({
       <SimpleGrid columns={2} spacing={4} mb={4}>
         <Button
           colorScheme="blue"
-          isFullWidth={true}
+          width="full"
           isDisabled={tabIndex === 0}
           onClick={() => navigate(-1)}
           leftIcon={<ArrowBackIcon />}
@@ -38,7 +38,7 @@ export function FormNavigation({
         </Button>
         <Button
           colorScheme="blue"
-          isFullWidth={true}
+          width="full"
           isDisabled={tabIndex === totalSize - 1}
           onClick={() => navigate(1)}
           leftIcon={<ArrowForwardIcon />}

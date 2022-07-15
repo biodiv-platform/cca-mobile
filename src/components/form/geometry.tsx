@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import NativeLocation from "@components/core/native-location";
 import SITE_CONFIG from "@configs/site-config";
-import { NakshaGmapsDraw } from "@ibp/naksha-gmaps-draw";
+import { NakshaGmapsDraw, GMAP_FEATURE_TYPES } from "@ibp/naksha-gmaps-draw";
 import { namedFormErrorMessage } from "@utils/field";
 import { getMapCenter } from "@utils/location";
 import React, { useRef, useState } from "react";
@@ -69,15 +69,16 @@ export const GeometryField = ({
       <FormInputControl isLargeVariant={isLargeVariant}>
         <Box position="relative">
           <NakshaGmapsDraw
-            defaultViewPort={viewPort}
-            defaultFeatures={field.value}
+            defaultViewState={viewPort}
+            defaultDrawingMode={GMAP_FEATURE_TYPES.POINT}
+            data={field.value}
             isAutocomplete={true}
             isMultiple={true}
             isImport={true}
             maxZoom={16}
-            onFeaturesChange={field.onChange}
+            onDataChange={field.onChange}
             gmapRegion={SITE_CONFIG.MAP.COUNTRY}
-            gmapApiAccessToken={SITE_CONFIG.TOKENS.GMAP}
+            gmapAccessToken={SITE_CONFIG.TOKENS.GMAP}
             mapStyle={{ height: "22rem", width: "100%", borderRadius: ".25rem" }}
             autocompleteComponent={
               <InputGroup mb={4}>

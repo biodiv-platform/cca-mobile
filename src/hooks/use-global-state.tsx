@@ -1,5 +1,7 @@
 import { Network } from "@capacitor/network";
 import { StatusBar } from "@capacitor/status-bar";
+import { createStandaloneToast } from "@chakra-ui/react";
+import { customTheme } from "@configs/theme";
 import useDidUpdateEffect from "@hooks/use-did-update-effect";
 import { EVENTS, STORAGE_KEYS } from "@static/constants";
 import { getUserFromTokens } from "@utils/auth";
@@ -34,6 +36,7 @@ export const GlobalStateProvider = ({ children }: GlobalStateProviderProps) => {
     []
   );
   const [user, setUser] = useState<any>(initialUser);
+  const { ToastContainer } = createStandaloneToast({ theme: customTheme });
 
   const isLoggedIn = useMemo(() => !!user.id, [user]);
 
@@ -101,6 +104,7 @@ export const GlobalStateProvider = ({ children }: GlobalStateProviderProps) => {
         setIsLoading
       }}
     >
+      <ToastContainer />
       {children}
     </GlobalStateContext.Provider>
   );
