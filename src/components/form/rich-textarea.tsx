@@ -1,8 +1,8 @@
 import { FormControl, FormErrorMessage, FormHelperText } from "@chakra-ui/react";
-import QuillInput from "@components/core/quill-input";
 import { namedFormErrorMessage } from "@utils/field";
 import React from "react";
 import { useController } from "react-hook-form";
+import { DefaultEditor } from "react-simple-wysiwyg";
 
 import { FormInputControl, FormLabel } from "./common";
 
@@ -41,7 +41,7 @@ const RichTextAreaField = ({
         helpText={helpText}
       />
       <FormInputControl isLargeVariant={isLargeVariant}>
-        <QuillInput value={field.value} onChange={field.onChange} />
+        <DefaultEditor placeholder={label} {...field} title={label} />
       </FormInputControl>
 
       <FormErrorMessage children={namedFormErrorMessage(fieldState?.error?.message, name, title)} />
