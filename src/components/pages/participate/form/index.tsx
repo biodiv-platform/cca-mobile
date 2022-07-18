@@ -38,6 +38,7 @@ export default function ParticipateFormComponent({ template }) {
 
   const hForm = useForm<any>({
     mode: "onBlur",
+    shouldFocusError: false,
     resolver: yupResolver(Yup.object().shape(formSchema))
   });
 
@@ -56,7 +57,7 @@ export default function ParticipateFormComponent({ template }) {
   return (
     <PageWrapper title={`${template.name} (${template.shortName})`} showBackButton={true}>
       <FormProvider {...hForm}>
-        <form onSubmit={hForm.handleSubmit(handleOnSubmit)} className="pure-form">
+        <form onSubmit={hForm.handleSubmit(handleOnSubmit)} className="pure-form" noValidate>
           <Tabs value={tabIndex} onChange={setTabIndex} id="s-tabs">
             {templateGroups.map(({ heading, fields }) => (
               <Tab key={heading?.fieldId} label={heading.name}>
