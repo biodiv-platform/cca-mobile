@@ -50,7 +50,7 @@ export const RadioInputField = ({
   const handleOnReset = () => field.onChange("");
 
   return (
-    <FormControl isInvalid={fieldState.invalid} mb={mb} {...props}>
+    <FormControl isInvalid={!!fieldState.error} mb={mb} {...props}>
       <FormLabel
         isLargeVariant={isLargeVariant}
         title={title}

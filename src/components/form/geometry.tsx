@@ -58,7 +58,7 @@ export const GeometryField = ({
   const [viewPort, setViewPort] = useState(defaultViewPort);
 
   return (
-    <FormControl isInvalid={fieldState.invalid} mb={mb} isRequired={isRequired} {...props}>
+    <FormControl isInvalid={!!fieldState.error} mb={mb} isRequired={isRequired} {...props}>
       <FormLabel
         isLargeVariant={isLargeVariant}
         title={title}

@@ -78,6 +78,8 @@ export function LoginPageComponent() {
 
     const { success, data } = await axLogin(payload);
 
+    setIsLoading(false);
+
     if (success && data?.status) {
       if (data?.verificationRequired) {
         notification("Account verification required");
@@ -90,7 +92,6 @@ export function LoginPageComponent() {
     } else {
       notification("Invalid Credentials", NotificationType.Error);
     }
-    setIsLoading(false);
   };
 
   const handleOnRegister = () => {

@@ -42,6 +42,10 @@ ion-card ion-button {
   display: none;
 }
 
+.chakra-input__left-element {
+  z-index: 0!important;
+}
+
 /* React Datepicker */
 .react-datepicker__navigation-icon {
   margin-top: 12px !important;

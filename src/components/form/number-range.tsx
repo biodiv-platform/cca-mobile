@@ -48,7 +48,7 @@ export const NumberRangeField = ({
 
   return (
     <FormControl
-      isInvalid={fieldState.invalid}
+      isInvalid={!!fieldState.error}
       mb={mb}
       hidden={hidden}
       isRequired={isRequired}

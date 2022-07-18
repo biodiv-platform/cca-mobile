@@ -47,7 +47,7 @@ export const TextBoxField = ({
 
   return (
     <FormControl
-      isInvalid={fieldState.invalid}
+      isInvalid={!!fieldState.error}
       mb={mb}
       hidden={hidden}
       isRequired={isRequired}

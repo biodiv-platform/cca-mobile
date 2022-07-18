@@ -1,4 +1,5 @@
 import {
+  Box,
   Checkbox,
   CheckboxGroup,
   FormControl,
@@ -25,6 +26,7 @@ interface ICheckboxListProps {
   hint?: string;
   isLargeVariant?;
   isOthers?: boolean;
+  isRequired?: boolean;
 }
 
 export const CheckboxListField = ({
@@ -47,19 +49,26 @@ export const CheckboxListField = ({
   } = useController({ name });
 
   return (
-    <FormControl isInvalid={fieldState.invalid} mb={mb} {...props}>
-      <FormLabel
-        isLargeVariant={isLargeVariant}
-        title={title}
-        label={label}
-        name={name}
-        helpText={helpText}
-      />
+    <Box mb={mb} id={name}>
+      <FormControl isInvalid={!!fieldState.error} {...props}>
+        <FormLabel
+          isLargeVariant={isLargeVariant}
+          title={title}
+          label={label}
+          name={name}
+          helpText={helpText}
+        />
+      </FormControl>
       <FormInputControl isLargeVariant={isLargeVariant}>
         <CheckboxGroup defaultValue={value} onChange={onChange} isDisabled={disabled}>
           <Stack>
             {options.map((option) => (
-              <Checkbox key={option.value} disabled={option?.isDisabled} value={option.value}>
+              <Checkbox
+                key={option.value}
+                name={name}
+                disabled={option?.isDisabled}
+                value={option.value}
+              >
                 {optionLabelShow(option.label)}
               </Checkbox>
             ))}
@@ -73,6 +82,6 @@ export const CheckboxListField = ({
         />
         {hint && <FormHelperText color="gray.600">{hint}</FormHelperText>}
       </FormInputControl>
-    </FormControl>
+    </Box>
   );
 };

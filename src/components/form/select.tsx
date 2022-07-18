@@ -54,7 +54,7 @@ export const SelectInputField = ({
 
   return (
     <FormControl
-      isInvalid={fieldState.invalid}
+      isInvalid={!!fieldState.error}
       className="dropdown"
       aria-invalid={fieldState.invalid}
       mb={mb}

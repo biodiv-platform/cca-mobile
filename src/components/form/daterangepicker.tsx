@@ -57,7 +57,7 @@ export const DateRangePickerField = ({
   const maxDate = hasMaxDate ? new Date().setHours(23, 59, 59, 999) : null; // End of Day
 
   return (
-    <FormControl isInvalid={fieldState.invalid} mb={mb} {...props}>
+    <FormControl isInvalid={!!fieldState.error} mb={mb} {...props}>
       <FormLabel
         isLargeVariant={isLargeVariant}
         title={title}
