@@ -2,6 +2,7 @@ import { CheckIcon } from "@chakra-ui/icons";
 import { Box } from "@chakra-ui/react";
 import PageWrapper from "@components/core/page-wrapper";
 import { Tab, Tabs } from "@components/core/simple-tabs";
+import ErrorSummery from "@components/form/error-summery";
 import { SubmitButton } from "@components/form/submit-button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import useParticipations from "@hooks/use-participations";
@@ -23,7 +24,7 @@ export default function ParticipateFormComponent({ template }) {
   const [tabIndex, setTabIndex] = useState(0);
   const { trySingleDataSync } = useParticipations();
 
-  const [formSchema, templateFields, templateGroups] = useMemo(() => {
+  const [formSchema, templateFields, templateGroups, fieldIdMap] = useMemo(() => {
     // groupFieldsEnabled
     const newFields = buildValidationRules(template.fields);
     const hForm = Object.fromEntries(
@@ -33,7 +34,9 @@ export default function ParticipateFormComponent({ template }) {
     );
     const groupFields = splitIntoGroups(newFields);
     const groupFieldsEnabled = arrayOfSize(groupFields.length);
-    return [hForm, newFields, groupFields, groupFieldsEnabled];
+    const fieldIdMap = Object.fromEntries(newFields.map((f) => [f.fieldId, f.name]));
+
+    return [hForm, newFields, groupFields, fieldIdMap, groupFieldsEnabled];
   }, []);
 
   const hForm = useForm<any>({
@@ -81,6 +84,7 @@ export default function ParticipateFormComponent({ template }) {
             >
               {t("form.submit")}
             </SubmitButton>
+            <ErrorSummery fieldIdMap={fieldIdMap} />
           </FormNavigation>
         </form>
       </FormProvider>
