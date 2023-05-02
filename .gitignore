@@ -29,7 +29,7 @@ package-lock.json
 .eslintcache
 
 # Platforms
-/android
+# /android TODO: undo comment
 ./configs
 
 # Resources

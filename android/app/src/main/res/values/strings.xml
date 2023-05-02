@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Community Conserved Areas</string>
+    <string name="title_activity_main">Community Conserved Areas</string>
+    <string name="package_name">org.communityconservedareas.m</string>
+    <string name="custom_url_scheme">org.communityconservedareas.m</string>
+</resources>
